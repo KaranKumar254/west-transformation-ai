@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEST Transformation AI - Turn Waste into Wealth</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="background-animation">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-recycle"></i>
+                <span>WEST<span class="highlight">AI</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#examples">Examples</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-sparkles"></i>
+                <span>AI-Powered Waste Solutions</span>
+            </div>
+            <h1 class="hero-title">
+                Transform <span class="gradient-text">Waste</span> into <span class="gradient-text">Wealth</span>
+            </h1>
+            <p class="hero-subtitle">
+                Discover innovative ways to convert agricultural and industrial waste into valuable products using cutting-edge AI technology
+            </p>
+            
+            <!-- Search Section -->
+            <div class="search-container">
+                <div class="input-wrapper">
+                    <i class="fas fa-leaf input-icon"></i>
+                    <input 
+                        type="text" 
+                        id="westInput" 
+                        placeholder="Enter waste material (e.g., Rice husk, Tomato waste, Coffee grounds...)"
+                        autocomplete="off"
+                    >
+                </div>
+                <button class="ai-button" onclick="askAI()">
+                    <i class="fas fa-magic"></i>
+                    <span>Ask AI</span>
+                    <div class="button-glow"></div>
+                </button>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>AI is analyzing your waste material...</p>
+            </div>
+
+            <!-- Answer Section -->
+            <div id="answerSection" class="answer-section hidden">
+                <div class="answer-card">
+                    <div class="answer-header">
+                        <i class="fas fa-brain"></i>
+                        <h3>AI Analysis Results</h3>
+                    </div>
+                    <div id="answer" class="answer-content"></div>
+                </div>
+            </div>
+
+            <!-- Video Section -->
+            <div id="video" class="video-section"></div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features" id="about">
+        <div class="container">
+            <h2 class="section-title">Why Choose WEST AI?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI-Powered Analysis</h3>
+                    <p>Advanced algorithms to identify the best transformation methods for your waste materials</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Maximize Value</h3>
+                    <p>Get insights on the most profitable ways to convert waste into marketable products</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Eco-Friendly</h3>
+                    <p>Contribute to a sustainable future by reducing waste and carbon footprint</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovative Solutions</h3>
+                    <p>Discover cutting-edge technologies and creative transformation methods</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section class="examples" id="examples">
+        <div class="container">
+            <h2 class="section-title">Popular Waste Transformations</h2>
+            <div class="examples-grid">
+                <div class="example-card" onclick="fillInput('Rice husk')">
+                    <div class="example-image">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h4>Rice Husk</h4>
+                    <p>Silica, biofuel, insulation</p>
+                </div>
+                <div class="example-card" onclick="fillInput('Tomato waste')">
+                    <div class="example-image">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h4>Tomato Waste</h4>
+                    <p>Lycopene, animal feed</p>
+                </div>
+                <div class="example-card" onclick="fillInput('Coffee grounds')">
+                    <div class="example-image">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h4>Coffee Grounds</h4>
+                    <p>Fertilizer, biofuel</p>
+                </div>
+                <div class="example-card" onclick="fillInput('Banana peel')">
+                    <div class="example-image">
+                        <i class="fas fa-lemon"></i>
+                    </div>
+                    <h4>Banana Peel</h4>
+                    <p>Biogas, purification</p>
+                </div>
+                <div class="example-card" onclick="fillInput('Sugarcane bagasse')">
+                    <div class="example-image">
+                        <i class="fas fa-candy-cane"></i>
+                    </div>
+                    <h4>Sugarcane Bagasse</h4>
+                    <p>Paper, bioenergy</p>
+                </div>
+                <div class="example-card" onclick="fillInput('Plastic waste')">
+                    <div class="example-image">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h4>Plastic Waste</h4>
+                    <p>Fuel, construction materials</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="stat-number">10K+</h3>
+                    <p>Waste Materials Analyzed</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number">500+</h3>
+                    <p>Transformation Methods</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number">95%</h3>
+                    <p>Success Rate</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="stat-number">24/7</h3>
+                    <p>AI Availability</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-recycle"></i>
+                        <span>WEST<span class="highlight">AI</span></span>
+                    </div>
+                    <p>Transforming waste into wealth with the power of artificial intelligence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#examples">Examples</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> babukaran526@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +91 9546322440</li>
+                        <li><i class="fas fa-map-marker-alt"></i> India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 WEST Transformation AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
