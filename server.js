@@ -9,7 +9,7 @@ app.use(express.json());
 // Serve static files
 app.use(express.static('.'));
 
-const API_KEY = "AIzaSyCrvmDagauWRTnAAWNa3TSvCk-PZx0W1r8";
+const API_KEY = "Paste your api key here";
 
 app.post("/ai", async (req, res) => {
     try {
